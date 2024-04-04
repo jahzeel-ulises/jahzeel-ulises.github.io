@@ -37,7 +37,16 @@ img{
 .index-main{
     padding-top: 5%;
 }
+/*------------------------Computer Image----------------------------*/
+.image-computer {
+    max-width: 500px;
+}
 
+  @media (min-width: 0px) and (max-width: 600px){
+    .image-computer {
+        max-width: 450px;
+    }
+}
 
 /*----------------------Cards----------------------------------------------------*/
 
