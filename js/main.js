@@ -1,4 +1,4 @@
-class Navbar extends HTMLElement {
+customElements.define('nav-template',class Navbar extends HTMLElement {
       constructor() {
           super();
       }
@@ -15,5 +15,34 @@ class Navbar extends HTMLElement {
               }).catch(e => console.error(e));
 
       }
-}
-customElements.define('nav-template',Navbar);
+});
+
+customElements.define('modal-template',class Modal extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        fetch(this.getAttribute("src"))
+            .then(r => r.text())
+            .then(t => {
+                let parser = new DOMParser();
+                let html = parser.parseFromString(t, "text/html");
+                this.innerHTML = html.body.innerHTML;
+            }).catch(e => console.error(e));
+    }
+});
+
+customElements.define('footer-template',class Footer extends HTMLElement {
+    constructor() {
+        super();
+    }
+    connectedCallback() {
+        fetch(this.getAttribute("src"))
+            .then(r => r.text())
+            .then(t => {
+                let parser = new DOMParser();
+                let html = parser.parseFromString(t, "text/html");
+                this.innerHTML = html.body.innerHTML;
+            }).catch(e => console.error(e));
+    }
+});
