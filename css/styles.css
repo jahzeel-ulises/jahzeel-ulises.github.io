@@ -329,6 +329,11 @@ input:checked + label .description_p {
     color:white;
 }
 
+/*---------------Size--------------*/
+.size-text{
+    font-size: 1.3rem;
+}
+
 /*--------------------Font------------------------------*/
 @font-face {
     font-family: '3dumbregular';
